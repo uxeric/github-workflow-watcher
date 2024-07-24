@@ -1,4 +1,4 @@
-module terminal-01
+module githubww
 
 go 1.18
 
