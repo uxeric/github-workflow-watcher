@@ -1,0 +1,8 @@
+pat: "your-personal-access-token"
+repos:
+  - name: "your-cool-repo"
+    owner: "repo-owner"
+  - name: "your-cool-repo"
+    owner: "repo-owner"
+  - name: "your-cool-repo"
+    owner: "repo-owner"
