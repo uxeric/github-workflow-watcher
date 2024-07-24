@@ -144,7 +144,6 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m model) View() string {
-	// https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
 	HeaderStyle := lipgloss.NewStyle().
 		Bold(true).
 		Foreground(lipgloss.Color("#fdfdfd"))
@@ -166,7 +165,7 @@ func (m model) View() string {
 				return OddRowStyle
 			}
 		}).
-		Headers("Repo", "Branch", "Description", "User", "Triggered At", "Build Status")
+		Headers("Repo", "Branch", "Description", "User", "Triggered", "Build Status")
 
 	filteredWorkflowRuns := uniqueWorkflowRuns(m.WorkflowRuns)
 
