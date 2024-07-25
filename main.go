@@ -12,6 +12,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"time"
 )
 
@@ -73,7 +74,12 @@ func getAllWorkflowRuns(repos []Repo, pat string) []WorkflowRun {
 }
 
 func getConfig() Config {
-	yamlFile, err := ioutil.ReadFile("config.yml")
+	execPath, err := os.Executable()
+	if err != nil {
+		log.Fatalf("Error finding executable path: %v", err)
+	}
+	execDir := filepath.Dir(execPath)
+	yamlFile, err := ioutil.ReadFile(execDir + "/config.yml")
 	if err != nil {
 		log.Fatalf("Error reading config.yml: %v", err)
 	}
