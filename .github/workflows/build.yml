@@ -17,15 +17,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v3
         with:
           go-version: 1.18
 
       - name: Cache Go modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
@@ -41,9 +41,9 @@ jobs:
         run: go build -o github-workflow-watcher.exe
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
-          name: myapp-${{ matrix.os }}
+          name: github-workflow-watcher-${{ matrix.os }}
           path: |
             github-workflow-watcher-linux
             github-workflow-watcher.exe
