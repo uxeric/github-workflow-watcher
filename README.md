@@ -1,8 +1,14 @@
 # Github Workflow Watcher
 
-Build for your platform using `go build`. By default it'll compile to `githubww`.
+A colorful CLI tool to watch the status of multiple github workflows.
+
+# Setup
 
 Copy `config.example.yml` to `config.yml` and configure it with your repo information and personal access token.
+
+## Dev Notes
+
+Build for your platform using `go build`. By default it'll compile to `githubww`.
 
 ## Dev Notes
 
